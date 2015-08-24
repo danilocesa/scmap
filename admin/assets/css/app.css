@@ -1,0 +1,36 @@
+body {
+  font: 100% Arial, Tahoma, Verdana;
+  background-color: #f6f6f6;
+  overflow-x: hidden;
+  height: auto; }
+
+.image {
+  margin-top: -100px; }
+
+.white {
+  color: #fff !important; }
+
+#login-form .column {
+  max-width: 450px; }
+
+#admin-top-nav {
+  height: 53px; }
+  #admin-top-nav .header {
+    border: none;
+    margin-left: -85px;
+    font-size: 26px; }
+  #admin-top-nav .item:before {
+    width: 0; }
+  #admin-top-nav #admin-profile {
+    margin-right: -80px; }
+
+#admin-sidebar {
+  margin-top: 52px; }
+
+#admin-mainContent {
+  padding-right: 0; }
+
+.openModal {
+  cursor: pointer; }
+
+/*# sourceMappingURL=app.css.map */

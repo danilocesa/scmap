@@ -1,0 +1,226 @@
+/*******************************
+            Global
+*******************************/
+
+html {
+  font-size: 14px;
+
+}
+
+body{
+	background:rgb(224,224,224);
+}
+
+#front-container{
+	padding:0!important;
+    margin:0;
+}
+
+
+/*******************************
+     Header / Logo & Slogan
+*******************************/
+.top-header{
+	background:#fff!important;
+    padding-top: 0 !important;
+    height:92px;
+}
+.logo-header{
+	background:#fff!important;
+    margin:0!important;
+}
+
+
+/*******************************
+           Menu Header
+*******************************/
+
+.menu-header a{
+	font-weight:bold;
+	font-size:16px;
+	color:#fff!important;
+}
+
+.menu-header a:hover{
+	color:#000;
+}
+.menu-header{
+	background:rgb(12,13,80)!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+    margin-top:0!important;
+}
+
+.menu-header-item li.active{
+}
+
+ul.sub-menu {
+  padding: 0;
+  position:absolute;
+  z-index: 100;
+  display: none;
+  background: #fff;
+  left:30px;
+  width:100%;
+  background:rgb(12,13,80);
+  top:17px;
+}
+
+ul.sub-menu li { 
+  background:rgb(12,13,80);
+  display: block; 
+  padding:7px;
+  text-align: left;
+
+}
+
+ul.sub-menu li:first-child { 
+  margin-top:14px;
+}
+
+ul.sub-menu li a {color:#fff;font-size:14px;}
+ul.sub-menu li:hover { 
+	background: #4169e1;
+	transition:all 0.3s linear;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+.menu-header-item li:hover ul {
+  display: block;
+  z-index: 100;
+
+}
+
+
+/*******************************
+      Content  Container
+*******************************/
+.content-container{
+	background:rgb(224,224,224)!important;
+}
+
+.content-container .row{
+	padding:7px 70px!important;
+}
+
+/*******************************
+      		Homepage
+*******************************/
+
+.news-events .nes-date{
+	font-style: italic;
+	font-size:12px;
+}
+
+
+.accordian {
+	width: 660px; 
+	height: 425px;
+	overflow: hidden;
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	margin-left:-190px;
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	width: 2000px;
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 45px;
+	float: left;
+	
+	/*Transitions to give animation effect*/
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to 
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements
+.accordian ul:hover li {width: 40px;}*/
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style
+.accordian ul li:hover {width: 385px;}*/
+
+.accordian li img {
+	display: block;
+	width:490px;
+	height:380px;
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+/*Image title styles*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	width: 381px;	
+	bottom:0;
+	transform: rotate(270deg);
+	transform-origin: left bottom 0;
+	left:56px;
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-top:1px solid gray;
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 18px;
+	font-size: 20px;
+
+}
+
+.accordian-content{
+	position:absolute!important;
+	margin-left:75px!important;
+	width:300px;
+	opacity: 0.9;
+}
+/*******************************
+      Footer
+*******************************/
+.footer{
+	background:rgb(12,13,80)!important;
+	color:#fff;
+	/*position:absolute!important;*/
+	bottom:0;
+  	width: 100%!important;
+  	/*height:170px;*/
+    padding-bottom:0!important;
+    padding-top:0!important;
+}
+
+.footer a{
+	color:#fff!important;
+}
+
+.footer a:hover{
+	color:gray!important;
+}
+
+#footer-menu > .item:first-child{
+    border-left: none;
+}
+
+#footer-menu > .item{
+    border-left: 1px solid #fff;
+}
