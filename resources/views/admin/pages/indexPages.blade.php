@@ -82,7 +82,7 @@
             <div class="ui grey deny basic button">
                 Cancel
             </div>
-            {!! Form::submit('Update',array('class'=>'ui positive right button')) !!}
+            {!! Form::submit('Update',array('class'=>'ui positive right button','id'=>'updatePageDesc')) !!}
             {{--<button class="ui positive right labeled icon button">--}}
                 {{--Update--}}
                 {{--<i class="checkmark icon"></i>--}}

@@ -72,21 +72,22 @@ class AdminPages extends Base_Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request)
+    public function update($id,Request $request)
     {
 
 //        $this->validate($request, [
 //            'pageDesc' => 'required',
 //        ]);
 //
-//        $adminPage = AdminPage::find($id);
-//        $adminPage->description = $request->input('pageDesc');
+        $adminPage = AdminPage::find($id);
+        $adminPage->description = $request->input('pageDesc');
+        $adminPage->save();
 
 //
 //        $request->session()->flash('flashSuccess', 'Page description successfully update!');
 
-        var_dump($_POST);
-//        return response()->json($_POST);
+//        var_dump($_POST);
+        return response()->json($request->all());
     }
 
     /**

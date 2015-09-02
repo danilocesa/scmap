@@ -88,29 +88,40 @@ $(document).ready(function() {
         },
         onSuccess: function() {
             var $descID = document.getElementById("pageDescID").value;
-            var xhr = new XMLHttpRequest();
-            xhr.open("put", document.getElementById("pageDescForm").action+'/'+$descID, true);
-            xhr.setRequestHeader('X-CSRF-Token', document.getElementsByName("_token")[0].getAttribute("value"));
-            //xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            //xhr.setRequestHeader("X-HTTP-Method-Override", "PUT");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200) {
-                        console.log(xhr);
-                        //var $jsonResp = JSON.parse(xhr.responseText);
-                       console.log(xhr.responseText);
-                        console.log(1);
-                        //console.log($jsonResp);
-                    } else {
-                        alert('Something got wrong. Please refresh the page.')
+            var $pageUpdateDesc = document.getElementById("updatePageDesc");
+            $.ajax({
+                url: document.getElementById("pageDescForm").action+'/'+$descID,
+                method: 'PUT',
+                dataType: 'json',
+                data:{
+                    _token:document.getElementsByName("_token")[0].getAttribute("value"),
+                    pageDesc: document.getElementById("page-desc").value,
+                    _method: 'put'
+                },
+                beforeSend: function (xhr){
+                    if ($pageUpdateDesc.classList){
+                        $pageUpdateDesc.classList.add('disabled');
                     }
+                    else{
+                        $pageUpdateDesc.className += ' ' + 'disabled';
+                    }
+
+                },
+                error: function(xhr){
+                    alert('Something got wrong. Please refresh the page.');
                 }
-            }
-            xhr.send({
-                _token:document.getElementsByName("_token")[0].getAttribute("value"),
-                pageDesc: document.getElementById("page-desc").value,
-                _method: 'put'
+            }).done(function(data){
+                if ($pageUpdateDesc.classList){
+                    $pageUpdateDesc.classList.remove('disabled');
+                }
+                else{
+                    $pageUpdateDesc.className = $pageUpdateDesc.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+                }
+
+                console.log(data);
+
             });
+
             return false;
         }
     });
