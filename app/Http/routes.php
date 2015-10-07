@@ -20,8 +20,8 @@ Route::get('/', function()
 //About
 Route::get('about', function()
 {
-    $users = DB::select('select * from pages where category = "about" and parent = "1" ');
-    return View::make('pages.about',$users);
+    $aboutDesc = DB::select('select * from pages where category = "about" and parent = "1" ');
+    return view('pages.about')->with('desc',$aboutDesc);
 });
 //About history
 Route::get('about-history', function()
@@ -38,7 +38,8 @@ Route::get('contact-us', function()
 //Members
 Route::get('members', function()
 {
-    return View::make('pages.members');
+    $memberDesc = DB::select('select * from pages where category = "members" and parent = "1" ');
+    return View::make('pages.members')->with('desc',$memberDesc);
 });
 
 //Member Requirements
@@ -50,7 +51,8 @@ Route::get('member-requirements', function()
 //Events
 Route::get('events', function()
 {
-    return View::make('pages.events');
+    $eventsDesc = DB::select('select * from pages where category = "events" and parent = "1" ');
+    return View::make('pages.events')->with('desc',$eventsDesc);
 });
 
 //Events Conference

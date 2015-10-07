@@ -1,173 +1,172 @@
 $(document).ready(function() {
-    //Semantic UI Dropdown
-    $('.ui.dropdown').dropdown();
-    //Semantic UI message
-    $('.message .close').on('click', function() {
-        $(this).closest('.message').transition('fade');
-    });
-    //Semantic UI Popup
-    $('.inline.icon').popup({inline: true});
-    //Semantic UI Accordion
-    $('.ui.accordion').accordion();
 
-    //Profile Form Validation
-    $('#profileSettings-form').form({
-        fields: {
-            fullName: { identifier  : 'fullName',
-                rules: [{
-                    type   : 'empty',
-                    prompt : 'Please enter your full name'
-                }]
-            },
-            username: { identifier : 'username',
-                rules: [{
-                    type   : 'empty',
-                    prompt : 'Please enter a username'
-                }]
-            },
-            email: { identifier : 'email',
-                rules: [{
-                    type   : 'empty',
-                    prompt : 'Please enter a email address'
-                },{
-                    type   : 'email',
-                    prompt : 'Please enter valid email address'
-                }]
-            },
-            password: {identifier : 'password',
-                rules: [{
-                    type   : 'empty',
-                    prompt : 'Please enter a new or current password'
-                }, {
-                    type   : 'minLength[6]',
-                    prompt : 'Your password must be at least 6 characters'
-                }]
-            },
-            password_confirmation: {identifier : 'password_confirmation',
-                rules: [{
-                    type   : 'match[password]',
-                    prompt : 'Please enter same as password'
-                }]
-            }
-        },inline : true
-    });
+//Semantic UI Dropdown
+$('.ui.dropdown').dropdown();
 
+//Semantic UI message
+$('.message .close').on('click', function() {
+    $(this).closest('.message').transition('fade');
+});
 
-    // Login Admin
-    $("#loginForm").form({
-        fields: {
-            email: {identifier  : 'email',
-                rules: [{
-                    type   : 'empty',
-                    prompt : 'Please enter your e-mail'
-                },{
-                    type   : 'email',
-                    prompt : 'Please enter a valid e-mail'
-                }]
-            },
-            password: {identifier  : 'password',
-                rules: [{
-                    type   : 'empty',
-                    prompt : 'Please enter your password'
-                },{
-                    type   : 'length[6]',
-                    prompt : 'Your password must be at least 6 characters'
-                }]
-            }
-        }
-    });
+//Semantic UI Popup
+$('.inline.icon').popup({inline: true});
 
-    $("#pageDescForm").form({
-        fields: {
-            description:{identifier: 'page-desc',
-                rules:[{
-                    type    :'empty',
-                    prompt  :'Please put a description'
-                }]
-            }
+//Semantic UI Accordion
+$('.ui.accordion').accordion();
+
+//Profile Form Validation
+$('#profileSettings-form').form({
+    fields: {
+        fullName: { identifier  : 'fullName',
+            rules: [{
+                type   : 'empty',
+                prompt : 'Please enter your full name'
+            }]
         },
-        onSuccess: function() {
-            var $descID = document.getElementById("pageDescID").value;
-            var $pageUpdateDesc = document.getElementById("updatePageDesc");
-            $.ajax({
-                url: document.getElementById("pageDescForm").action+'/'+$descID,
-                method: 'PUT',
-                dataType: 'json',
-                data:{
-                    _token:document.getElementsByName("_token")[0].getAttribute("value"),
-                    pageDesc: document.getElementById("page-desc").value,
-                    _method: 'put'
-                },
-                beforeSend: function (xhr){
-                    if ($pageUpdateDesc.classList){
-                        $pageUpdateDesc.classList.add('disabled');
-                    }
-                    else{
-                        $pageUpdateDesc.className += ' ' + 'disabled';
-                    }
-
-                },
-                error: function(xhr){
-                    alert('Something got wrong. Please refresh the page.');
-                }
-            }).done(function(data){
-                if ($pageUpdateDesc.classList){
-                    $pageUpdateDesc.classList.remove('disabled');
-                    document.getElementById("prompt-messages").className =
-                        document.getElementById("prompt-messages").className.replace
-                        ( /(?:^|\s)hidden(?!\S)/g , '' )
-                    document.getElementById("prompt-messages").style.display = 'block';
-                    setTimeout(function(){
-                        document.getElementById("prompt-messages").style.display = 'none';
-                    }, 3000);
-                }
-                else{
-                    $pageUpdateDesc.className = $pageUpdateDesc.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-                }
-
-                //console.log(data);
-
-            });
-
-            return false;
+        username: { identifier : 'username',
+            rules: [{
+                type   : 'empty',
+                prompt : 'Please enter a username'
+            }]
+        },
+        email: { identifier : 'email',
+            rules: [{
+                type   : 'empty',
+                prompt : 'Please enter a email address'
+            },{
+                type   : 'email',
+                prompt : 'Please enter valid email address'
+            }]
+        },
+        password: {identifier : 'password',
+            rules: [{
+                type   : 'empty',
+                prompt : 'Please enter a new or current password'
+            }, {
+                type   : 'minLength[6]',
+                prompt : 'Your password must be at least 6 characters'
+            }]
+        },
+        password_confirmation: {identifier : 'password_confirmation',
+            rules: [{
+                type   : 'match[password]',
+                prompt : 'Please enter same as password'
+            }]
         }
-    });
+    },inline : true
+});
 
 
-
-    //Modal
-    var $openModal = document.getElementsByClassName("openModal");
-    function openModal() {
-        var $modalDesc = "#"+this.getAttribute("data-modal");
-        $($modalDesc).modal('show');
-        var $modalID = this.getAttribute("data-id");
-        //Page Description Modal
-        if($modalDesc = 'edit-desc'){
-            var xhr = new XMLHttpRequest();
-            xhr.open("get", "pages/"+$modalID, true);
-            xhr.setRequestHeader('X-CSRF-Token', document.getElementsByName("csrf-token")[0].getAttribute("content"));
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 ) {
-                    if(xhr.status == 200){
-                        document.getElementById('pageDescID').value = $modalID;
-                        var $jsonResp = JSON.parse(xhr.responseText);
-                        document.getElementById("page-desc").textContent = $jsonResp.description;
-                    }
-                    else {
-                        alert('Something got wrong. Please refresh the page.')
-                    }
-                }
-            }
-            xhr.send({_token: document.getElementsByName("csrf-token")[0].getAttribute("content")});
+// Login Admin
+$("#loginForm").form({
+    fields: {
+        email: {identifier  : 'email',
+            rules: [{
+                type   : 'empty',
+                prompt : 'Please enter your e-mail'
+            },{
+                type   : 'email',
+                prompt : 'Please enter a valid e-mail'
+            }]
+        },
+        password: {identifier  : 'password',
+            rules: [{
+                type   : 'empty',
+                prompt : 'Please enter your password'
+            },{
+                type   : 'length[6]',
+                prompt : 'Your password must be at least 6 characters'
+            }]
         }
     }
+});
 
-    for(var i=0; i<$openModal.length; i++) $openModal[i].onclick = openModal;
+//Admin page description modal
+$("#pageDescForm").form({
+    fields: {
+        description:{identifier: 'page-desc',
+            rules:[{
+                type    :'empty',
+                prompt  :'Please put a description'
+            }]
+        }
+    },
+    onSuccess: function() {
+        var $descID = document.getElementById("pageDescID").value;
+        var $pageUpdateDesc = document.getElementById("updatePageDesc");
+        $.ajax({
+            url: document.getElementById("pageDescForm").action+'/'+$descID,
+            method: 'PUT',
+            dataType: 'json',
+            data:{
+                _token:document.getElementsByName("_token")[0].getAttribute("value"),
+                pageDesc: document.getElementById("page-desc").value,
+                _method: 'put'
+            },
+            beforeSend: function (xhr){
+                if ($pageUpdateDesc.classList){
+                    $pageUpdateDesc.classList.add('disabled');
+                }
+                else{
+                    $pageUpdateDesc.className += ' ' + 'disabled';
+                }
+
+            },
+            error: function(xhr){
+                alert('Something got wrong. Please refresh the page.');
+            }
+        }).done(function(data){
+            if ($pageUpdateDesc.classList){
+                $pageUpdateDesc.classList.remove('disabled');
+                document.getElementById("prompt-messages").className =
+                    document.getElementById("prompt-messages").className.replace
+                    ( /(?:^|\s)hidden(?!\S)/g , '' )
+                document.getElementById("prompt-messages").style.display = 'block';
+                setTimeout(function(){
+                    document.getElementById("prompt-messages").style.display = 'none';
+                }, 3000);
+            }
+            else{
+                $pageUpdateDesc.className = $pageUpdateDesc.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+            }
+
+            //console.log(data);
+
+        });
+
+        return false;
+    }
+});
 
 
 
-
-
-
+//Modal
+var $openModal = document.getElementsByClassName("openModal");
+function openModal() {
+    var $modalDesc = "#"+this.getAttribute("data-modal");
+    $($modalDesc).modal('show');
+    var $modalID = this.getAttribute("data-id");
+    //Page Description Modal
+    if($modalDesc = 'edit-desc'){
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "pages/"+$modalID, true);
+        xhr.setRequestHeader('X-CSRF-Token', document.getElementsByName("csrf-token")[0].getAttribute("content"));
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 ) {
+                if(xhr.status == 200){
+                    document.getElementById('pageDescID').value = $modalID;
+                    var $jsonResp = JSON.parse(xhr.responseText);
+                    console.log($jsonResp.description);
+                    document.getElementById("page-desc").textContent = $jsonResp.description;
+                }
+                else {
+                    alert('Something got wrong. Please refresh the page.')
+                }
+            }
+        }
+        xhr.send({_token: document.getElementsByName("csrf-token")[0].getAttribute("content")});
+    }
+}
+for(var i=0; i<$openModal.length; i++) $openModal[i].onclick = openModal;
 
 });
