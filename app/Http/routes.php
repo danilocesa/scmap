@@ -20,7 +20,8 @@ Route::get('/', function()
 //About
 Route::get('about', function()
 {
-    return View::make('pages.about');
+    $users = DB::select('select * from pages where category = "about" and parent = "1" ');
+    return View::make('pages.about',$users);
 });
 //About history
 Route::get('about-history', function()

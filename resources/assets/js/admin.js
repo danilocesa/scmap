@@ -113,12 +113,19 @@ $(document).ready(function() {
             }).done(function(data){
                 if ($pageUpdateDesc.classList){
                     $pageUpdateDesc.classList.remove('disabled');
+                    document.getElementById("prompt-messages").className =
+                        document.getElementById("prompt-messages").className.replace
+                        ( /(?:^|\s)hidden(?!\S)/g , '' )
+                    document.getElementById("prompt-messages").style.display = 'block';
+                    setTimeout(function(){
+                        document.getElementById("prompt-messages").style.display = 'none';
+                    }, 3000);
                 }
                 else{
                     $pageUpdateDesc.className = $pageUpdateDesc.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
                 }
 
-                console.log(data);
+                //console.log(data);
 
             });
 

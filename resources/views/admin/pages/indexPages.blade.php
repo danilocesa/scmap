@@ -78,7 +78,10 @@
         </div>
         <div class="ui error message"></div>
         <div class="ui hidden divider"></div>
-        <div class="ui right floated">
+        <div class="ui hidden positive message" id="prompt-messages">
+            <p>Successfully Update.</p>
+        </div>
+        <div class="ui">
             <div class="ui grey deny basic button">
                 Cancel
             </div>
