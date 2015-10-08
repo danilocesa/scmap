@@ -51,7 +51,7 @@
                 List of Pages
             </a>
             <div class="divider"></div>
-            <a  href="{{ url('/admin/pages/about') }}"  class="item">
+            <a  href="{{ url('/admin/about') }}"  class="item">
                 About
             </a>
             <a  href="{{ url('/admin/pages/news') }}"  class="item">

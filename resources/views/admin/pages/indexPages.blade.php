@@ -7,7 +7,7 @@
         <h2 class="ui header">
             <i class="file outline icon"></i>
             <div class="content">
-                Pages
+                Main Pages
             </div>
         </h2>
         <div class="ui divider"></div>

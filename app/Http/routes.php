@@ -127,6 +127,11 @@ Route::get('adminLogout', function(){
         'roles' => ['administrator','manager','root']
     ]);
 
+    Route::resource('admin/about', 'Admin\AboutPages', [
+        'middleware' => ['auth', 'roles'],
+        'roles' => ['administrator','manager','root']
+    ]);
+
     Route::post('admin/pages/update',[
         'middleware' => ['auth', 'roles'],
         'uses' => 'Admin\AdminPages@update',
