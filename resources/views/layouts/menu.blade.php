@@ -12,7 +12,7 @@ $urlEvents = array('events','events-conference','events-lic','events-vismin','ev
     <a href="about">About</a>
     <ul class="sub-menu">
       <li><a href="about-history">History</a></li>
-      <li><a href="#">Board</a></li>
+      <li><a href="about-board">Board</a></li>
       <li><a href="contact-us">Contact Us</a></li>
     </ul>
   </li>
@@ -20,7 +20,7 @@ $urlEvents = array('events','events-conference','events-lic','events-vismin','ev
   <li class="<?php echo (in_array($segment1,$urlMember)) ? 'active' : ''; ?> item">
     <a href="members">Members</a>
     <ul class="sub-menu">
-      <li><a href="#">Benefits</a></li>
+      <li><a href="member-benefits">Benefits</a></li>
       <li><a href="member-requirements">Requirements</a></li>
       <li><a href="#">Download</a></li>
       <li><a href="#">List</a></li>

@@ -14,75 +14,96 @@
 //Index
 Route::get('/', function()
 {
-    return view('pages.home');
+    $feed = new SimplePie();
+    $feed->set_feed_url("http://www.scmap.org/home/feed/rss");
+    $feed->enable_cache(false);
+//    $feed->set_cache_location(storage_path().'/cache');
+//    $feed->set_cache_duration(60*60*12);
+    $feed->set_output_encoding('utf-8');
+    $feed->init();
+    return view('pages.home')->with('feed',$feed);
 });
 
 //About
 Route::get('about', function()
 {
     $aboutDesc = DB::select('select * from pages where category = "about" and parent = "1" ');
-    return view('pages.about')->with('desc',$aboutDesc);
+    return view('pages.about.about')->with('desc',$aboutDesc);
 });
+
+//About board
+Route::get('about-board', function()
+{
+    return View::make('pages.about.about-board');
+});
+
 //About history
 Route::get('about-history', function()
 {
-    return View::make('pages.about-history');
+    return View::make('pages.about.about-history');
 });
 
 //Contact
 Route::get('contact-us', function()
 {
-    return View::make('pages.contact-us');
+    return View::make('pages.about.contact-us');
 });
 
 //Members
 Route::get('members', function()
 {
     $memberDesc = DB::select('select * from pages where category = "members" and parent = "1" ');
-    return View::make('pages.members')->with('desc',$memberDesc);
+    return View::make('pages.members.members')->with('desc',$memberDesc);
+});
+
+//Members Benefits
+Route::get('member-benefits', function()
+{
+    //$memberDesc = DB::select('select * from pages where category = "members" and parent = "1" ');
+    return View::make('pages.members.member-benefits');
 });
 
 //Member Requirements
 Route::get('member-requirements', function()
 {
-    return View::make('pages.member-requirements');
+    return View::make('pages.members.member-requirements');
 });
 
 //Events
 Route::get('events', function()
 {
     $eventsDesc = DB::select('select * from pages where category = "events" and parent = "1" ');
-    return View::make('pages.events')->with('desc',$eventsDesc);
+    return View::make('pages.events.events')->with('desc',$eventsDesc);
 });
 
 //Events Conference
 Route::get('events-conference', function()
 {
-    return View::make('pages.events-conference');
+    return View::make('pages.events.events-conference');
 });
 
 //Events Lic
 Route::get('events-lic', function()
 {
-    return View::make('pages.events-lic');
+    return View::make('pages.events.events-lic');
 });
 
 //Events Vismin
 Route::get('events-vismin', function()
 {
-    return View::make('pages.events-vismin');
+    return View::make('pages.events.events-vismin');
 });
 
 //Events Vismin
 Route::get('events-gmm', function()
 {
-    return View::make('pages.events-gmm');
+    return View::make('pages.events.events-gmm');
 });
 
 //Events Fellowship
 Route::get('events-fellowship', function()
 {
-    return View::make('pages.events-fellowship');
+    return View::make('pages.events.events-fellowship');
 });
 
 //Admin

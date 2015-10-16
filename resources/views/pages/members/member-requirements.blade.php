@@ -43,6 +43,37 @@
       <p>Have more questions?</p>
       <p>Please email the SCMAP Secretariat here with your inquiries.</p>
       </p>
+
+      <h3>MEMBERSHIP REQUIREMENTS</h3>
+      Applicants for corporate membership must complete and submit the following :<br /><br />
+      * Company or partnership membership form, with photograph of official representative<br />
+      * A brief company or partnership profile.<br />
+      * A copy of page 1 of SEC registration<br />
+      <br />
+      Applicants for individual membership need only to submit an individual application form.<br />
+      <br />
+      If the application is approved, the company must :<br />
+      <br />
+      * Attend an orientation session<br />
+      * Attend one SCMAP activity, such as a general membership meeting, seminar, or conference.<br />
+      * Pay a one-time corporate membership fee of P8,400 (VAT inclusive), or an individual membership fee of P4,000
+      (VAT inclusive)<br />
+      * Pay corporate annual dues of P8,400 (VAT inclusive), or individual annual dues of P4,000 (VAT inclusive), or a
+      pro-rated amount during the first calendar year.<br />
+      <br />
+      <h3>MEMBER PARTICIPATION</h3>
+
+      A corporate member exercises its membership through one official representative, and one or more alternate representatives. Participation includes the following:<br />
+      <br />
+      * Representatives are committed to participate and interact in all DMAP activities, including surveys and
+      committee work.<br />
+      * All communications, including payments, are channeled through the official representative. The official rep
+      ensures that his company’s account is settled promptly.<br />
+      * All other company employees may attend seminars, forums, conferences, and other activities.<br />
+      * The official representative is eligible to be elected as Director and Officer. The official representative of
+      a logistics provider is eligible to be elected as Director under certain conditions.<br />
+      <br />
+      An individual member participates directly as also described above. Individual members are not eligible to be elected as Director or Officer, and have no right to vote.
   </div>
 </div>
 @stop

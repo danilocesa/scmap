@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('content')
 @section('title', 'Homepage')
+
 	<div class="two column row">
     <!-- Accordion -->
     <div class="ten wide column">
@@ -10,27 +11,27 @@
             <div class="image_title">
               <a href="#">About SCMAP</a>
             </div>
-            <div class="ui secondary segment accordian-content">
+            <!--<div class="ui secondary segment accordian-content">
               <h3>2015 SCMAP Suppy Chain Conference</h3>
               <h1>Go World Class</h1>
               <h2>Paying the road to tomorrow is supply chain</h2>
               <p>17-18 September 2015 EDSA Shagri-la Manila</p>
               <button>Be a Delegate</button>
-            </div>  
-            <img src="images/sem5.png"/>
+            </div>-->
+            <img src="http://www.scmap.org/home/wp-content/uploads/2011/03/salutebanner2.jpg"/>
           </li>
           <li>
             <div class="image_title">
               <a href="#">Research</a>
             </div>
-               <div class="ui secondary segment accordian-content">
+               <!--<div class="ui secondary segment accordian-content">
                 <h3>2015 SCMAP Suppy Chain Conference</h3>
                 <h1>Go World Class</h1>
                 <h2>Paying the road to tomorrow is supply chain</h2>
                 <p>17-18 September 2015 EDSA Shagri-la Manila</p>
                 <button>Be a Delegate</button>
-              </div>  
-              <img src="images/sem4.jpg"/>
+              </div>-->
+              <img src="http://www.scmap.org/home/wp-content/uploads/2009/07/perspectivebanner.jpg"/>
           </li>
           <li>
             <div class="image_title">
@@ -42,7 +43,7 @@
                 <h2>Paying the road to tomorrow is supply chain</h2>
                 <p>17-18 September 2015 EDSA Shagri-la Manila</p>
                 <button>Be a Delegate</button>
-              </div>  
+              </div>
               <img src="images/sem3.jpg"/>
           </li>
           <li>
@@ -60,16 +61,16 @@
           </li>
           <li>
             <div class="image_title">
-              <a href="#">2015 Conference</a>
+              <a href="#">2012 Conference</a>
             </div>
-               <div class="ui secondary segment accordian-content">
+               <!--<div class="ui secondary segment accordian-content">
                   <h3>2015 SCMAP Suppy Chain Conference</h3>
                   <h1>Go World Class</h1>
                   <h2>Paying the road to tomorrow is supply chain</h2>
                   <p>17-18 September 2015 EDSA Shagri-la Manila</p>
                   <button>Be a Delegate</button>
-                </div>  
-              <img src="images/sem1.jpg"/>
+                </div>-->
+              <img src="http://www.scmap.org/home/wp-content/uploads/2012/02/supply-chain-in-a-day.jpg"/>
           </li>
         </ul>
       </div>
@@ -79,14 +80,12 @@
     <div class="ui segment six wide column news-events">
       <h2 class="ui dividing header">Latest News</h2>
        <div class="ui bulleted list">
-          <div class="item">
-            <a href="#">2015 SCMAP Supply Chain Conference theme announced</a>
-            <p class="nes-date">(16 May 2015)</p>
-          </div>
-           <div class="item">
-            <a href="#">SCMAP,Fountainhead sign website aggrement.</a>
-            <p class="nes-date">(16 May 2015)</p>
-          </div>
+           @foreach($feed->get_items(0,3) as $item)
+               <div class="item">
+                   <a href="#">{{ $item->get_title() }}</a>
+                   <p class="nes-date">(16 May 2015)</p>
+               </div>
+           @endforeach
         </div>
         <a href="#" id="more-news"><p>more news>></p></a>
       <h2 class="ui dividing header">Upcoming Events</h2>
