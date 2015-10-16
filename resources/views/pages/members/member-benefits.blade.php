@@ -21,7 +21,7 @@
       * Opportunities for exchange of up-to-date information on industry practices, trends, events and
       developments, by participating in surveys, bench marking projects and informal exchange with counterparts in
       other companies<br />
-      * Opportunities for training in the form of SCMAP seminars, forums, conferences <br />
+      * Opportunitises for training in the form of SCMAP seminars, forums, conferences <br />
       * Access to SCMAP’s roster of representatives and contacts in industry, technology, government and the
       academe.<br />
 

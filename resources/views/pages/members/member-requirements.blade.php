@@ -18,7 +18,7 @@
         <li>Upon the board's approval, the member must attend an orientation session and one SCMAP activity.</li>
         <li>The member must also pay the one-time membership fee and membership dues for the current year (see below).</li>
         <li>New members will be inducted into the organization once all these requirements are fulfilled.</li>
-      </ul>  
+      </ul>
       <h4 class="ui header">Membership fees</h4>
       <p>One-time membership fee: this is paid upon approval of membership to SCMAP.</p>
       <ul class="ui list">
@@ -67,7 +67,7 @@
       <br />
       * Representatives are committed to participate and interact in all DMAP activities, including surveys and
       committee work.<br />
-      * All communications, including payments, are channeled through the official representative. The official rep
+      * All communicationss, including payments, are channeled through the official representative. The official rep
       ensures that his company’s account is settled promptly.<br />
       * All other company employees may attend seminars, forums, conferences, and other activities.<br />
       * The official representative is eligible to be elected as Director and Officer. The official representative of

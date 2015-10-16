@@ -49,6 +49,14 @@ Route::get('contact-us', function()
     return View::make('pages.about.contact-us');
 });
 
+
+//News
+Route::get('news', function()
+{
+    return View::make('pages.news.news');;
+});
+
+
 //Members
 Route::get('members', function()
 {
@@ -67,6 +75,18 @@ Route::get('member-benefits', function()
 Route::get('member-requirements', function()
 {
     return View::make('pages.members.member-requirements');
+});
+
+//Member Download
+Route::get('member-download', function()
+{
+    return View::make('pages.members.member-download');
+});
+
+//Member List
+Route::get('member-list', function()
+{
+    return View::make('pages.members.member-list');
 });
 
 //Events
@@ -94,7 +114,19 @@ Route::get('events-vismin', function()
     return View::make('pages.events.events-vismin');
 });
 
-//Events Vismin
+//Events SSCE
+Route::get('events-ssce', function()
+{
+    return View::make('pages.events.events-ssce');
+});
+
+//Events Ceoforum
+Route::get('events-ceoforum', function()
+{
+    return View::make('pages.events.events-ceoforum');
+});
+
+//Events GMM
 Route::get('events-gmm', function()
 {
     return View::make('pages.events.events-gmm');
@@ -105,6 +137,25 @@ Route::get('events-fellowship', function()
 {
     return View::make('pages.events.events-fellowship');
 });
+
+//Advocacies
+Route::get('advocacies', function()
+{
+    return View::make('pages.advocacies');
+});
+
+//Academe
+Route::get('academe', function()
+{
+    return View::make('pages.academe');
+});
+
+//Advocacies
+Route::get('research', function()
+{
+    return View::make('pages.research');
+});
+
 
 //Admin
 

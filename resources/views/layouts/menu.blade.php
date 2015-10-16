@@ -16,14 +16,14 @@ $urlEvents = array('events','events-conference','events-lic','events-vismin','ev
       <li><a href="contact-us">Contact Us</a></li>
     </ul>
   </li>
-  <li class="item"><a href="#">News</a></li>
+  <li class="item"><a href="news">News</a></li>
   <li class="<?php echo (in_array($segment1,$urlMember)) ? 'active' : ''; ?> item">
     <a href="members">Members</a>
     <ul class="sub-menu">
       <li><a href="member-benefits">Benefits</a></li>
       <li><a href="member-requirements">Requirements</a></li>
-      <li><a href="#">Download</a></li>
-      <li><a href="#">List</a></li>
+      <li><a href="member-download">Download</a></li>
+      <li><a href="member-list">List</a></li>
     </ul>
   </li>
   <li class="<?php echo (in_array($segment1,$urlEvents)) ? 'active' : ''; ?> item">
@@ -32,14 +32,14 @@ $urlEvents = array('events','events-conference','events-lic','events-vismin','ev
       <li><a href="events-conference">Conference</a></li>
       <li><a href="events-lic">Lic</a></li>
       <li><a href="events-vismin">Vismin</a></li>
-      <li><a href="#">Ssce</a></li>
-      <li><a href="#">Ceoforum</a></li>
+      <li><a href="events-ssce">Ssce</a></li>
+      <li><a href="events-ceoforum">Ceoforum</a></li>
       <li><a href="events-gmm">Gmm</a></li>
       <li><a href="events-fellowship">Fellowship</a></li>
     </ul>
   </li>
-  <li class="item"><a href="#">Advocacies</a></li>
-  <li class="item"><a href="#">Academe</a></li>
-  <li class="item"><a href="#">Research</a></li>
+  <li class="item"><a href="advocacies">Advocacies</a></li>
+  <li class="item"><a href="academe">Academe</a></li>
+  <li class="item"><a href="research">Research</a></li>
 </ul>
 </div>

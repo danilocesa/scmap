@@ -13,7 +13,7 @@
             </div>
             <!--<div class="ui secondary segment accordian-content">
               <h3>2015 SCMAP Suppy Chain Conference</h3>
-              <h1>Go World Class</h1>
+              <h1>Go Worlds Class</h1>
               <h2>Paying the road to tomorrow is supply chain</h2>
               <p>17-18 September 2015 EDSA Shagri-la Manila</p>
               <button>Be a Delegate</button>

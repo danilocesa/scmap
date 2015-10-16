@@ -9,7 +9,8 @@
     <p>The Logistics Immersion Course will be held on 15-17 May. The first day of seminars will be on board 2GO's MV St. Leo the Great, bound for Cebu. On the second day, LIC participants will take part in the first SCMAP Vismin Supply Chain Conference. On the third day, there will be a fellowship lunch at the Bluewater Maribago Beach Resort, before a plane flight to Manila takes us home.</p>
     <p>This event is supported by 2GO.</p>
     <p>Register as a delegate</p>
-    <p>Registration fee is at PHP 15,950 for employees of SCMAP member companies, and PHP 19,950 for non-members. All prices are VAT included. To be a delegate, please contact the SCMAP Secretariat through this page.</p>
+    <p>Registration fee is at PHP 15,950 for employees of SCMAP member companies, and PHP 19,950 for non-members.
+        All prices are VAT included. To be a delegate, please contact the SCMAP Secretariat through this page.</p>
     <p>Register as a sponsor</p>
     <p>Sponsors to the Logistics Immersion Course have a chance to reach a captive audience of supply chain practitioners. Benefits include:</p>
     <ul class="ui list" > 
