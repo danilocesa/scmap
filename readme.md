@@ -2,10 +2,6 @@
 
 SCMAP Website is project for new website of scmap.org
 
-Created by: Danilo Z. Cesa Jr.
-Email: cesadanilo@yahoo.com
-
-
 
 ## Laravel PHP Framework
 
